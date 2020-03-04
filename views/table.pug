@@ -1,0 +1,74 @@
+doctype html
+html
+  head
+     title Bootstrap Example
+  link(rel='stylesheet', href='bootstrap-4.4.1-dist/')
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+  style.
+      .dontshow{
+        display:none;
+      }
+  body
+    table.table.table-bordered.table-striped.table-hover(border='2px')
+      thead
+        tr
+          th FIRSTNAME
+          th lastname
+          th EMAIL
+          th password
+          th confirm-passsword
+          th DOB
+      tbody
+      each member in data
+        tr
+          td  #{member.Username}
+          td  #{member.lastname}
+          td  #{member.Email}
+          td  #{member.password}
+          td  #{member.confirmpassword}
+          td  #{member.Date}
+          td
+           button.btn.edit(value=member.Username).edit Edit
+           button.btn.btn-danger(style="margin-left:80px;" value=member.Username).remove Remove 
+      center.dontshow     
+        form(method="post",action='/update')
+           label name:
+           input#Username(type="text",name="Username")
+           br
+           br
+           label mail:
+           input#mail(type="mail",name="Email")
+           br
+           br
+           input#id(type="text",name="id").hide
+           input.btn.btn-primary(type="submit" value="update")
+      script.
+          $(".remove").click(function(){
+             var id = $(this).val();
+             alert(id);
+          $.post('/remove',{a:id},function(data){
+            alert('deleted succesfully');
+            location.reload('/table');
+          });
+          });
+          $(".edit").click(function(){
+              //alert('charan');
+              var id=$(this).val();
+               //alert(id);
+              $.post('/edit',{b:id},function(data){
+                  alert(data);
+                  var a=JSON.stringify(data);
+                   //alert(a);
+                  var b=JSON.parse(a)
+                  //alert(b[0].Username);
+                  //alert(b[0].mail);
+                  $("#Username").val(b[0].Username);
+                  $("#mail").val(b[0].Email);
+                  $('#id').val(b[0]._id);
+                  $('.dontshow').show();
+          });
+          });

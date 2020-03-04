@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title Posting A Project
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+  // jQuery library
+  // Latest compiled JavaScript
+  body
+    .container.col-md-4.col-md-offset-4(style='background-color: orange;')
+      h2 POST YOUR PROJECT
+      form(action='/postproj', method='post')
+        .form-group
+          label(for='projectname') Project Name:
+          input(type='text', placeholder='Project Name...', name='project_name')
+        .form-group
+          label(for='theme') Theme:
+          textarea.form-control(rows='1', placeholder='Project Concept...', name='branch1')
+        .form-group
+          label(for='description') Teamname:
+          input(type='text', placeholder='Project Name...', name='description')
+        .form-group
+          label(for='leader') Teamleader Name:
+          input(type='text', placeholder='Captain...', name='leader')
+        .form-group
+          label(for='contactnum') Contact Number:
+          input(type='text', placeholder='PH Number...', name='number')
+        .form-group
+          label(for='details') Detailed Description:
+          textarea.form-control(rows='5', placeholder='Detailed description...', name='details')
+        button.btn.btn-primary.btn-customized(type='submit')
+          span.glyphicon.glyphicon-folder-open
+          |  POST

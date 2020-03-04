@@ -1,0 +1,98 @@
+doctype html
+html(lang='en')
+  head
+    title Bootstrap example
+    link(rel='stylesheet', href='bootstrap-4.4.1-dist/')   
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+  body(style='background-image:url(images/3musketeers.jpg)')
+     .cherry(style='margin-top: 100px;')
+  .row
+    .container.col-sm-4.col-sm-offset-4(style='border:groove; box-shadow: 10px 10px 10px 10px; padding-right:  180px;padding-bottom: 50px; padding-top: 10px; background-color: burlywood;')
+      ul.nav.nav-tabs
+        li.active
+          a(href='#Ourteam', data-toggle='tab') LOGIN
+        li
+          a(href='#OurObjective', data-toggle='tab') SIGN-UP
+        li
+          a(href='#Squad', data-toggle='tab') UPDATE
+      .tab-content
+        #Ourteam.tab-pane.fade.active.in
+          // - active-in
+          form.form-group(action='/formal', method='post')
+            if(error)
+            h1 #{error}
+            label Username:
+            input.form-control(type='text', name='Username', placeholder='enter user name')
+            br
+            br
+            label Email:
+            input.form-control(type='email', name='Email', placeholder='enter email')
+            br
+            br
+            label Password
+            input.form-control(type='password', name='password', placeholder='enter yor password')
+            br
+            br
+            button
+              span.glyphicon.glyphicon-ok
+              | login
+            a(href='/forgot') forgot-password?
+        #OurObjective.tab-pane.fade
+          h1 objectives
+          form.form-group(action='/form', method='post')    
+            label firstname:
+            input.form-control(type='text', name='Username', placeholder='enter user name')
+            br
+            br
+            label lastname:
+            input.form-control(type='text', name='lastname', placeholder='enter user name')
+            br
+            br
+            label Email:
+            input.form-control(type='email', name='Email', placeholder='enter email')
+            br
+            br
+            label Password
+            input.form-control(type='password', name='password', placeholder='enter yor password')
+            br
+            br
+            label Confirm-password
+            input.form-control(type='password', name='password', placeholder='enter yor password')
+            br
+            br
+            label DOB
+            input.form-control(type='date', name='Date')
+            br
+            br
+            button
+              span.user
+              | singup
+          // - fade is used for fading effect of the text
+        #Squad.tab-pane.fade
+          h1 squad
+          form.form-group(action='/updating', method='post')
+            label firstname:
+            input.form-control(type='text', name='Username', placeholder='enter user name')
+            br
+            br
+            label lastname:
+            input.form-control(type='text', name='lastname', placeholder='enter user name')
+            br
+            br
+            label Email:
+            input.form-control(type='email', name='Email', placeholder='enter email')
+            br
+            br
+            label Password
+            input.form-control(type='password', name='password', placeholder='enter yor password')
+            br
+            br
+            button
+              span.glyphicon.glyphicon-ok
+              | update
+             
+  

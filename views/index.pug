@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    title Bootstrap Example
+    link(rel='stylesheet', href='bootstrap-4.4.1-dist/')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+  body
+    .row
+      .container.col-sm-4.col-sm-offset-4(style='border:groove; box-shadow: 10px 10px 10px 10px; padding-right:  180px;padding-bottom: 50px; padding-top: 50px; background-color: burlywood; background-image: url(images/vespa.jpeg);background-repeat: no-repeat; background-position: center;background-size: cover; ')
+        h1.text-center.text-danger Form
+        br
+        br
+        form.form-group(action='/form', method='post')
+          label Username:
+          input.form-control(type='text', name='Username', placeholder='enter user name')
+          br
+          br
+          label Email:
+          input.form-control(type='email', name='Email', placeholder='enter email')
+          br
+          br
+          button
+            span.glyphicon.glyphicon-ok
+            | SUBMIT
+    br
+    br
+    br

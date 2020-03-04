@@ -1,0 +1,98 @@
+doctype html
+html(lang='en')
+  head
+    title Sidebar 01
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900', rel='stylesheet')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='stylesheets/style.css')
+  body
+    .wrapper.d-flex.align-items-stretch
+      nav#sidebar
+        .p-4.pt-5
+          a.img.logo.rounded-circle.mb-5(href='#', style='background-image: url(images/hulk.jpg);')
+          ul.list-unstyled.components.mb-5
+            li.active
+              a.dropdown-toggle(href='#homeSubmenu', data-toggle='collapse', aria-expanded='false') Home
+              ul#homeSubmenu.collapse.list-unstyled
+                li
+                  a(href='home') Login\Signup
+                li
+                  a(href='#') Home 2
+                li
+                  a(href='#') Home 3
+            li
+              a(href='projects') projects
+            li
+              a.dropdown-toggle(href='#pageSubmenu', data-toggle='collapse', aria-expanded='false') Pages
+              ul#pageSubmenu.collapse.list-unstyled
+                li
+                  a(href='#') Page 1
+                li
+                  a(href='#') Page 2
+                li
+                  a(href='#') Page 3
+            li
+              a(href='#') Portfolio
+            li
+              a(href='#') Contact
+          .footer
+      // Page Content
+      #content.p-4.p-md-5
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+          .container-fluid
+            button#sidebarCollapse.btn.btn-primary(type='button')
+              i.fa.fa-bars
+              span.sr-only Toggle Menu
+            button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+              i.fa.fa-bars
+            #navbarSupportedContent.collapse.navbar-collapse
+              ul.nav.navbar-nav.ml-auto
+                li.nav-item.active
+                  a.nav-link(href='#') Home
+                li.nav-item
+                  a.nav-link(href='#') About
+                li.nav-item
+                  a.nav-link(href='#') Portfolio
+                li.dropdown.nav-item
+                  a.dropdown-toggle.nav-link(data-toggle='dropdown', href='#')
+                    | Account
+                    span.caret
+                  ul.nav.navbar-right.dropdown-menu
+                    li
+                      a(href='charan')
+                        span.glyphicon.glyphicon-user
+                        | Login
+                    li
+                      a(href='sunil')
+                        span.glyphicon.glyphicon-user
+                        | Signup
+        div
+         .container
+           .row
+             each member in store
+              .col-md-6
+               .thumbnail
+                 h1  #{member.project_name}
+                 h2 #{member.branch1}
+                 //img(src="uploads/"+member.)
+                 button.btn.btn-info(type='button') get details
+                 button.btn.btn-success(type='button') join
+             br
+             br
+             br
+             br
+             br
+             br
+             br
+             br
+             br
+             br
+    script(src='javascripts/jquery.min.js')
+    script(src='javascripts/popper.js')
+    script(src='javascripts/bootstrap.min.js')
+    script(src='javascripts/main.js')
