@@ -10,6 +10,7 @@ html(lang='en')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel='stylesheet',href='')
   body
     .wrapper.d-flex.align-items-stretch
       nav#sidebar
@@ -39,7 +40,7 @@ html(lang='en')
             li
               a(href='#') Portfolio
             li
-              a(href='#') Contact
+              a(href='/logout') logout
           .footer
       // Page Content
       #content.p-4.p-md-5
@@ -53,7 +54,7 @@ html(lang='en')
             #navbarSupportedContent.collapse.navbar-collapse
               ul.nav.navbar-nav.ml-auto
                 li.nav-item.active
-                  a.nav-link(href='#') Home
+                  a.nav-link(href='/myprojs') My projects
                 li.nav-item
                   a.nav-link(href='#') About
                 li.nav-item
@@ -72,16 +73,19 @@ html(lang='en')
                         span.glyphicon.glyphicon-user
                         | Signup
         div
+        h1  welcome #{usable.lastname} !
+         br
+         br
          .container
            .row
              each member in store
               .col-md-6
                .thumbnail
-                 h1  #{member.project_name}
-                 h2 #{member.branch1}
+                 h1.te  #{member.project_name}
+                 h2.te #{member.branch1}
                  //img(src="uploads/"+member.)
-                 button.btn.btn-info(type='button') get details
-                 button.btn.btn-success(type='button') join
+                 button.btn.btn-info.btn-lg(type='button') get details
+                 button.btn.btn-success.btn-lg(type='button') join
              br
              br
              br

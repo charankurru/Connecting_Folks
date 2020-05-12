@@ -1,34 +1,224 @@
 doctype html
-html
+html(lang='en')
   head
-    title Posting A Project
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js')
-  // jQuery library
-  // Latest compiled JavaScript
+    title Post Project
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // ===============================================================================================
+    link(rel='icon', type='image/png', href='post_project/images/icons/favicon.ico')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/bootstrap/css/bootstrap.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='scss/font-awesome-4.7.0/css/font-awesome.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animate/animate.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/css-hamburgers/hamburgers.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/animsition/css/animsition.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/select2/select2.min.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='vendor/daterangepicker/daterangepicker.css')
+    // ===============================================================================================
+    link(rel='stylesheet', type='text/css', href='scss/util1.css')
+    link(rel='stylesheet', type='text/main1.css')
+    // ===============================================================================================
   body
-    .container.col-md-4.col-md-offset-4(style='background-color: orange;')
-      h2 POST YOUR PROJECT
-      form(action='/postproj', method='post')
-        .form-group
-          label(for='projectname') Project Name:
-          input(type='text', placeholder='Project Name...', name='project_name')
-        .form-group
-          label(for='theme') Theme:
-          textarea.form-control(rows='1', placeholder='Project Concept...', name='branch1')
-        .form-group
-          label(for='description') Teamname:
-          input(type='text', placeholder='Project Name...', name='description')
-        .form-group
-          label(for='leader') Teamleader Name:
-          input(type='text', placeholder='Captain...', name='leader')
-        .form-group
-          label(for='contactnum') Contact Number:
-          input(type='text', placeholder='PH Number...', name='number')
-        .form-group
-          label(for='details') Detailed Description:
-          textarea.form-control(rows='5', placeholder='Detailed description...', name='details')
-        button.btn.btn-primary.btn-customized(type='submit')
-          span.glyphicon.glyphicon-folder-open
-          |  POST
+    .container-contact100
+      .wrap-contact100
+        form.contact100-form.validate-form
+          span.contact100-form-title
+            | Post Your Project
+          .wrap-input100.validate-input(data-validate='Name is required')
+            span.label-input100 Project Name :
+            input.input100(type='text', name='project_name', placeholder='Enter your project name.......')
+            span.focus-input100
+          .wrap-input100.validate-input(data-validate='Small Discription is required')
+            span.label-input100 Small Discription :
+            textarea.input100(name='small_message', placeholder='Enter a small disciption which is viewed in running projects')
+            span.focus-input100
+          .wrap-input100.validate-input(data-validate='Full Discription is required')
+            span.label-input100 Full Discription :
+            textarea.input100(name='full_message', placeholder='Enter a small disciption which is viewed in running projects')
+            span.focus-input100
+          .wrap-input100.validate-input(data-validate='Team Name is required')
+            span.label-input100 Team Name :
+            input.input100(type='text', name='team_name', placeholder='Team Name.......')
+            span.focus-input100
+          .wrap-input100.validate-input(data-validate='Team Leader Name is required')
+            span.label-input100 Team Leader Name :
+            input.input100(type='text', name='leader_name', placeholder='Team Leader Name.......')
+            span.focus-input100
+          .wrap-input100.validate-input(data-validate='Contact Number is required')
+            span.label-input100 Contact Number :
+            input.input100(type='number', name='number', placeholder='Mobile Number')
+            span.focus-input100
+          span.contact100-form-title
+            | Team Details
+          .wrap-input100.validate-input
+            span.label-input100 1.Team Member details:
+            input.input100(type='text', name='name1', placeholder='Name.........')
+            span.focus-input100
+          .wrap-input100.input100-select
+            span.label-input100
+            div
+              select.selection-2(name='branch1')
+                option Choose Branch
+                option Civil Engineering
+                option Electrical and Electronics Engineering
+                option Mechanical Engineering
+                option Electronics and Communication Engineering
+                option Computer Science Engineering
+                option Information Technology
+                option Mining Engineering
+                option Petroleum Engineering
+                option Agricultural Engineering
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='id1', placeholder='Roll Id')
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='info1', placeholder='Roll in Project')
+            span.focus-input100
+          .wrap-input100.validate-input
+            span.label-input100 2.Team Member details:
+            input.input100(type='text', name='name2', placeholder='Name.........')
+            span.focus-input100
+          .wrap-input100.input100-select
+            span.label-input100
+            div
+              select.selection-2(name='branch2')
+                option Choose Branch
+                option Civil Engineering
+                option Electrical and Electronics Engineering
+                option Mechanical Engineering
+                option Electronics and Communication Engineering
+                option Computer Science Engineering
+                option Information Technology
+                option Mining Engineering
+                option Petroleum Engineering
+                option Agricultural Engineering
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='id2', placeholder='Roll Id')
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='info2', placeholder='Roll in Project')
+            span.focus-input100
+          .wrap-input100.validate-input
+            span.label-input100 3.Team Member details:
+            input.input100(type='text', name='name3', placeholder='Name.........')
+            span.focus-input100
+          .wrap-input100.input100-select
+            span.label-input100
+            div
+              select.selection-2(name='branch3')
+                option Choose Branch
+                option Civil Engineering
+                option Electrical and Electronics Engineering
+                option Mechanical Engineering
+                option Electronics and Communication Engineering
+                option Computer Science Engineering
+                option Information Technology
+                option Mining Engineering
+                option Petroleum Engineering
+                option Agricultural Engineering
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='id3', placeholder='Roll Id')
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='info3', placeholder='Roll in Project')
+            span.focus-input100
+          .wrap-input100.validate-input
+            span.label-input100 4.Team Member details:
+            input.input100(type='text', name='name1', placeholder='Name.........')
+            span.focus-input100
+          .wrap-input100.input100-select
+            span.label-input100
+            div
+              select.selection-2(name='branch4')
+                option Choose Branch
+                option Civil Engineering
+                option Electrical and Electronics Engineering
+                option Mechanical Engineering
+                option Electronics and Communication Engineering
+                option Computer Science Engineering
+                option Information Technology
+                option Mining Engineering
+                option Petroleum Engineering
+                option Agricultural Engineering
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='id4', placeholder='Roll Id')
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='info4', placeholder='Roll in Project')
+            span.focus-input100
+          .wrap-input100.validate-input
+            span.label-input100 5.Team Member details:
+            input.input100(type='text', name='name5', placeholder='Name.........')
+            span.focus-input100
+          .wrap-input100.input100-select
+            span.label-input100
+            div
+              select.selection-2(name='branch5')
+                option Choose Branch
+                option Civil Engineering
+                option Electrical and Electronics Engineering
+                option Mechanical Engineering
+                option Electronics and Communication Engineering
+                option Computer Science Engineering
+                option Information Technology
+                option Mining Engineering
+                option Petroleum Engineering
+                option Agricultural Engineering
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='id5', placeholder='Roll Id')
+            span.focus-input100
+          .wrap-input100.validate-input
+            input.input100(type='text', name='info5', placeholder='Roll in Project')
+            span.focus-input100
+          .container-contact100-form-btn
+            .wrap-contact100-form-btn
+              .contact100-form-bgbtn
+              button.contact100-form-btn
+                span
+                  | Submit
+                  i.fa.fa-long-arrow-right.m-l-7(aria-hidden='true')
+    #footer
+      h4#akhil
+        | © ALL COPYRIGHTS ARE RESERVED .
+        br
+        |   Designed by @AKHIL GRANDHI.
+    #dropDownSelect1
+    // ===============================================================================================
+    script(src='vendor/jquery/jquery-3.2.1.min.js')
+    // ===============================================================================================
+    script(src='vendor/animsition/js/animsition.min.js')
+    // ===============================================================================================
+    script(src='vendor/bootstrap/js/popper.js')
+    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    // ===============================================================================================
+    script(src='vendor/select2/select2.min.js')
+    script.
+      $(".selection-2").select2({
+      minimumResultsForSearch: 20,
+      dropdownParent: $('#dropDownSelect1')
+      });
+    // ===============================================================================================
+    script(src='vendor/daterangepicker/moment.min.js')
+    script(src='vendor/daterangepicker/daterangepicker.js')
+    // ===============================================================================================
+    script(src='vendor/countdowntime/countdowntime.js')
+    // ==================================================================================
+    script(src='javascripts/main1.js')
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-23581568-13')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-23581568-13');
